@@ -1,7 +1,7 @@
 const axios = require('axios');
 const fs = require('fs-extra');
 const path = require('path');
-const ytdl = require("@neoxr/ytdl-core");
+const ytdl = require("ytdl-core");
 const yts = require("yt-search");
 
 async function lado(api, event, args, message) {
@@ -81,8 +81,7 @@ async function kshitiz(api, event, args, message) {
 async function b(c, d, e, f) {
   try {
     const g = await axios.get(`https://gemini-ai-pearl-two.vercel.app/kshitiz?prompt=${encodeURIComponent(c)}&uid=${d}&apikey=kshitiz`);
-    const answer = g.data.answer;
-    return `👩‍💻 | 𝙶𝚎𝚖𝚒𝚗𝚒 |\n━━━━━━━━━━━━━━━━\n${answer}\n━━━━━━━━━━━━━━━━`;
+    return g.data.answer;
   } catch (h) {
     throw h;
   }
@@ -91,8 +90,7 @@ async function b(c, d, e, f) {
 async function i(c) {
   try {
     const j = await axios.get(`https://sdxl-kshitiz.onrender.com/gen?prompt=${encodeURIComponent(c)}&style=3`);
-    const answer = j.data.url;
-    return `━━━━━━━━━━━━━━━━\n${answer}\n━━━━━━━━━━━━━━━━`;
+    return j.data.url;
   } catch (k) {
     throw k;
   }
@@ -192,7 +190,7 @@ async function drawImage(message, prompt) {
 
 const a = {
   name: "gemini",
-  aliases: ["gem"],
+  aliases: ["bard"],
   version: "4.0",
   author: "vex_kshitiz",
   countDown: 5,
